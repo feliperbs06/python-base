@@ -6,9 +6,8 @@ import sys
 # (É mais fácil pedir perdão do que permissão)
 
 
-
 try:
-    names = open("names.txt").readlines() # FileNotFoundError
+    names = open("names.txt").readlines()  # FileNotFoundError
 
 except FileNotFoundError as e:
     print(f"[Error] {str(e)}")
