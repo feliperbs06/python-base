@@ -2,3 +2,10 @@ Minha primeira Nota	geral	Minha primeira nota
 Minha segunda Nota	tech	Python é legal
 Minha terceira nota	tech	Java também é legal, né?
 Flamengo ganhou	sports	Flamengo ganhou ontem
+Minha terceira nota	tech	Golang
+Repetições	python	While e for para repetir
+Foobar	foo	foo foo foo
+Outro	geral	texto
+Meu Post Legal	geral	Hello
+Estou Com Fome	comida	Batata
+Mais Fome Ainda	comida	Arroz

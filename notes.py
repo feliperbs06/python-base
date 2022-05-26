@@ -30,28 +30,36 @@ if not arguments or len(arguments) > 2:
 if arguments[0] not in (cmds):
     print(f"Invalid command {arguments[0]}")
 
-if arguments[0] == "read":
-    for line in open(filepath):
-        title, tag, text = line.split("\t")
-        if tag.lower() == arguments[1].lower():
-            print(f"title: {title}")
-            print(f"text: {text}")
-            print("-" * 30)
-            print()
+while True:
+    if arguments[0] == "read":
+        try:
+            arg_tag = arguments[1].lower()
+        except IndexError:
+            arg_tag = input("Qual a tag? ").strip().lower()
 
-if arguments[0] == "new":
-    # criação da nota
-    try:
-        title = arguments[1]  # TODO: Tratar exception
-    except IndexError as e:
-        print(str(e))
-        print("You must create a title")
-        sys.exit(1)
+        for line in open(filepath):
+            title, tag, text = line.split("\t")
+            if tag.lower() == arg_tag:
+                print(f"title: {title}")
+                print(f"text: {text}")
+                print("-" * 30)
+                print()
 
-    text = [
-        f"{title}",
-        input("tag:").strip(),
-        input("text:\n").strip(),
-    ]
-    with open(filepath, "a") as file_:
-        file_.write("\t".join(text) + "\n")
+    if arguments[0] == "new":
+        # criação da nota
+        try:
+            title = arguments[1]
+        except IndexError as e:
+            title = input("qual é o titulo? ").strip().title()
+
+        text = [
+            f"{title}",
+            input("tag:").strip(),
+            input("text:\n").strip(),
+        ]
+        with open(filepath, "a") as file_:
+            file_.write("\t".join(text) + "\n")
+
+    cont = input(f"Quer continuar {arguments[0]} notas? [N/y] ").strip().lower()
+    if cont != "y":
+        break

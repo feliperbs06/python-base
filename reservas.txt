@@ -1,0 +1,4 @@
+Arthur,4,5
+Joao,2,7
+Felipe,1,10
+Luan,3,3
